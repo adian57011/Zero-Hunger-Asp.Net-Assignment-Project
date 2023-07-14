@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Donation";
+}
+
+@if(TempData["msg"] != null)
+            {
+                <p class="text-success">@TempData["msg"]</p>
+            }
+
+<h2>Donation</h2>
+
+
+<div>
+    <span class="btn btn-primary">@Html.ActionLink("Donation", "Donation", "Donor")</span>
+    <span class="btn btn-success">@Html.ActionLink("Donation History", "History", "Donor")</span>
+    <span class="btn btn-danger">@Html.ActionLink("Logout", "Logout", "Donor")</span>
+</div>
+
+<form method="post">
+
+    Food Name: <input type="text" name="Name" class="form-control"  />
+    Quantity: <input type="text" name="Quantity" class="form-control"  />
+    Expiry Date: <input type="date" name="ExpiryDate"  />
+
+                 <input type="submit" name="Submit" value="Add" class="btn btn-success" />
+
+
+
+</form>
+

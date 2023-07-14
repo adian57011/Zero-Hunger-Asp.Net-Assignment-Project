@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@model List<Assingment.Db.Models.Request>
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Request Id</th>
+        <th>Donor Id</th>
+        <th>Donor Name</th>
+        <th>Donor Address</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.DonorId</td>
+            <td>@item.Donor.Name</td>
+            <td>@item.Donor.Address</td>
+        </tr>
+    }
+
+</table>
+
+
+

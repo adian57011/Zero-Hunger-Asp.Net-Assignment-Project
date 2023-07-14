@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Show Employee";
+}
+@model List<Assingment.Db.Models.Employee>
+
+<h2>Show Employee</h2>
+
+<div>
+    <span class="btn btn-success">@Html.ActionLink("Assign Employee", "Assign", "Admin") </span>
+    <span class="btn btn-primary">@Html.ActionLink("Create Employee", "AddEmployee", "Admin") </span>
+    <span class="btn btn-primary">@Html.ActionLink("Show Employee", "ShowEmployee", "Admin") </span>
+    <span class="btn btn-danger">@Html.ActionLink("DeleteEmployee", "DeleteEmployee", "Admin") </span>
+    <span class="btn btn-warning">@Html.ActionLink("Pending Request", "Pending", "Admin") </span>
+    <span class="btn btn-primary">@Html.ActionLink("View All", "ViewAll", "Admin") </span>
+    <span class="btn btn-danger">@Html.ActionLink("Logout", "Logout", "Admin") </span>
+</div>
+
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Employee Email</th>
+            
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+            </tr>
+
+        }
+
+    </table>
+</div>
+
+
+

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Donor Signup";
+}
+
+@if(TempData["msg"] != null)
+            {
+               <p class="text-danger"> @TempData["msg"] </p>
+            }
+
+<h2>Donor Signup</h2>
+
+<form method="post">
+
+    Name: <input type="text" name="Name" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Name")</span><br />
+
+    Email: <input type="text" name="Email" class="form-control" />
+    <span class="text-danger" >@Html.ValidationMessage("Email")</span><br />
+
+    Address: <input type="text" name="Address" class="form-control" />
+    <span class="text-danger" >@Html.ValidationMessage("Address")</span><br />
+
+    Password: <input type="text" name="Password" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Password")</span><br />
+
+    <input type="Submit" name="Submit" value="Signup" class="btn btn-success" />
+
+</form>
+

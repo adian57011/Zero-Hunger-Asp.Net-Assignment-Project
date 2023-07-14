@@ -1,0 +1,41 @@
+﻿
+
+@{
+    ViewBag.Title = "AddEmployee";
+}
+
+<h2>Add Employee</h2>
+
+<div>
+    <span class="btn btn-success">@Html.ActionLink("Assign Employee", "Assign", "Admin") </span>
+    <span class="btn btn-primary">@Html.ActionLink("Create Employee", "AddEmployee", "Admin") </span>
+    <span class="btn btn-primary">@Html.ActionLink("Show Employee", "ShowEmployee", "Admin") </span>
+    <span class="btn btn-danger">@Html.ActionLink("DeleteEmployee", "DeleteEmployee", "Admin") </span>
+    <span class="btn btn-warning">@Html.ActionLink("Pending Request", "Pending", "Admin") </span>
+    <span class="btn btn-primary">@Html.ActionLink("View All", "ViewAll", "Admin") </span>
+    <span class="btn btn-danger">@Html.ActionLink("Logout", "Logout", "Admin") </span>
+</div>
+
+
+
+
+@if (TempData["msg"] != null)
+{
+    <p class="text-danger"> @TempData["msg"] </p>
+}
+
+<form method="post">
+
+    Name: <input type="text" name="Name" class="form-control" />
+
+    <span class="text-danger">@Html.ValidationMessage("Name")</span> <br />
+
+    Email: <input type="text" name="Email" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Email")</span> <br />
+
+    Password <input type="text" name="Password" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Password")</span> <br />
+
+    <input type="submit" name="Submit" value="Add " class="btn btn-success" onclick="return confirm('Add the employee');" />
+</form>
+

@@ -1,0 +1,42 @@
+﻿
+@model List<Assingment.Models.DonationDto>
+
+@{
+    ViewBag.Title = "History";
+}
+
+<h2>Donor-History</h2>
+
+
+<div>
+    <span class="btn btn-primary">@Html.ActionLink("Donation", "Donation", "Donor")</span>
+    <span class="btn btn-success">@Html.ActionLink("Donation History", "History", "Donor")</span>
+    <span class="btn btn-danger">@Html.ActionLink("Logout", "Logout", "Donor")</span>
+</div>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Donor Id</th>
+        <th>Donation Id</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Status</th>
+    </tr>
+    
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.DonorId</td>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Status</td>
+                </tr>
+            }
+
+
+</table>
+
+
+

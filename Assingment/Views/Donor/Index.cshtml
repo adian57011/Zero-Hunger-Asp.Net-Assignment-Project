@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Donor-Home";
+}
+
+<h2>Donor-Home</h2>
+
+<div>
+    <span class="btn btn-primary">@Html.ActionLink("Donation","Donation","Donor")</span>
+    <span class="btn btn-success">@Html.ActionLink("Donation History","History","Donor")</span>
+    <span class="btn btn-danger">@Html.ActionLink("Logout","Logout","Donor")</span>
+</div>
+
+<div>
+    <h3>Welcome Home @Session["Name"]</h3>
+</div>
+
+

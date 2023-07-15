@@ -1,4 +1,5 @@
-﻿using Assingment.Db;
+﻿using Assingment.Auth;
+using Assingment.Db;
 using Assingment.Db.Models;
 using Assingment.Models;
 using System;
@@ -12,12 +13,13 @@ namespace Assingment.Controllers
     public class DonorController : Controller
     {
         // GET: Donor
+        [Logged]
         public ActionResult Index()
         {
             return View();
         }
 
-
+        [Logged]
         [HttpGet]
         public ActionResult Donation()
         {
@@ -46,6 +48,7 @@ namespace Assingment.Controllers
 
         }
 
+        [Logged]
         public ActionResult History()
         {
             int id = (int)Session["Id"];

@@ -1,4 +1,5 @@
-﻿using Assingment.Db;
+﻿using Assingment.Auth;
+using Assingment.Db;
 using Assingment.Db.Models;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace Assingment.Controllers
     public class EmployeeController : Controller
     {
         // GET: Employee
+        [Logged]
         public ActionResult Index()
         {
             int id = (int) Session["Id"];

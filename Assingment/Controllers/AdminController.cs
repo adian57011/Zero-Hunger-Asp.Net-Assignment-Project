@@ -1,4 +1,5 @@
-﻿using Assingment.Db;
+﻿using Assingment.Auth;
+using Assingment.Db;
 using Assingment.Db.Models;
 using Assingment.Models;
 using System;
@@ -11,6 +12,7 @@ namespace Assingment.Controllers
 {
     public class AdminController : Controller
     {
+        [Logged]
         // GET: Admin
         public ActionResult Index()
         {
@@ -18,6 +20,7 @@ namespace Assingment.Controllers
         }
 
         [HttpGet]
+        [Logged]
         public ActionResult AddEmployee()
         {
             return View();
@@ -45,6 +48,7 @@ namespace Assingment.Controllers
             }
         }
 
+        [Logged]
         public ActionResult ShowEmployee()
         {
             var db = new ZHContext();
@@ -53,6 +57,7 @@ namespace Assingment.Controllers
         }
 
         [HttpGet]
+        [Logged]
         public ActionResult Assign()
         {
             return View();
@@ -76,6 +81,7 @@ namespace Assingment.Controllers
             return View(obj);
         }
 
+        [Logged]
         public ActionResult ViewAll()
         {
             var db = new ZHContext();
@@ -85,6 +91,7 @@ namespace Assingment.Controllers
             return View(all);
         }
 
+        [Logged]
         public ActionResult Pending()
         {
             var db = new ZHContext();
